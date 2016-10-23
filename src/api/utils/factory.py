@@ -1,10 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from flask import Flask
-from api.utils.database import db
 import logging
 import sys
+from flask import Flask
+from flask import jsonify
+from flask_swagger import swagger
+from api.utils.database import db
 from api.utils.responses import response_with
 import api.utils.responses as resp
 from api.routes.routes_general import route_path_general
@@ -39,12 +41,19 @@ def create_app(config):
 
     # END GLOBAL HTTP CONFIGURATIONS
 
+    @app.route("/api/v1.0/spec")
+    def spec():
+        swag = swagger(app, prefix='/api/v1.0')
+        swag['info']['version'] = "1.0"
+        swag['info']['title'] = "Flask Starter API"
+        return jsonify(swag)
+
     db.init_app(app)
     with app.app_context():
         # from api.models import *
         db.create_all()
 
     logging.basicConfig(stream=sys.stdout,
-                        format='%(asctime)s|%(levelname)s|%(filename)s:%(lineno)s|%(funcName)20s()|%(message)s',
+                        format='%(asctime)s|%(levelname)s|%(filename)s:%(lineno)s|%(message)s',
                         level=logging.DEBUG)
     return app

@@ -14,7 +14,7 @@ class Book(db.Model):
     year = db.Column(db.Date)
     author_id = db.Column(db.Integer, db.ForeignKey('authors.id'))
 
-    def __init__(self, title, year, author_id):
+    def __init__(self, title, year, author_id=None):
         self.title = title
         self.year = year
         self.author_id = author_id
@@ -28,8 +28,9 @@ class Book(db.Model):
 class BookSchema(ModelSchema):
     class Meta(ModelSchema.Meta):
         model = Book
+        sqla_session = db.session
 
     id = fields.Number(dump_only=True)
     title = fields.String(required=True)
     year = fields.Date(required=True)
-    author_id = fields.Integer(required=True)
+    author_id = fields.Integer()
