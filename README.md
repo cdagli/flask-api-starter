@@ -26,6 +26,11 @@ pip install -r requirements.txt
 python -m run 
 ```
 
+Run tests:
+```
+nose2 -v
+```
+
 ###Using Docker
 Build with docker: 
 ```
