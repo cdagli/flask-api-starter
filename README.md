@@ -2,7 +2,7 @@
 
 This project provides a boilerplate for building a Rest API using flask.
 
-Other modules used are below; 
+Other modules used are listed below; 
 - sqlalchemy
 - marshmallow
 - sqlalchemy marshmallow
