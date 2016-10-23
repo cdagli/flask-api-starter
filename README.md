@@ -18,7 +18,10 @@ _*swagger documentation visualized with Swagger UI Console [Chrome extension](ht
 
 ```
 git clone https://github.com/cdagli/flask-api-starter
-cd src 
+cd flask-api-starter
+virtualenv venv
+source venv/bin/activate
+cd src
 pip install -r requirements.txt
 python -m run 
 ```
@@ -27,7 +30,7 @@ python -m run
 Build with docker: 
 ```
 git clone https://github.com/cdagli/flask-api-starter
-cd src
+cd flask-api-starter/src
 docker build -t flask-api-starter .
 ```
 
