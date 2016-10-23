@@ -45,6 +45,12 @@ UNAUTHORIZED_403 = {
     "message": "You are not allowed to do that."
 }
 
+NOT_FOUND_HANDLER_404 = {
+    "http_code": 404,
+    "code": "notFound",
+    "message": "There are no such handler"
+}
+
 SUCCESS_200 = {
     'http_code': 200,
     'code': 'success'

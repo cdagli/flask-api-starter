@@ -37,7 +37,7 @@ def create_app(config):
     @app.errorhandler(404)
     def not_found(e):
         logging.error(e)
-        return response_with(resp.NOT_FOUND_404)
+        return response_with(resp.NOT_FOUND_HANDLER_404)
 
     # END GLOBAL HTTP CONFIGURATIONS
 
