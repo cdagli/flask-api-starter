@@ -1,5 +1,7 @@
 # flask-api-starter
 
+[![Build Status](https://travis-ci.org/cdagli/flask-api-starter.svg?branch=master)](https://travis-ci.org/cdagli/flask-api-starter)
+
 This project provides a boilerplate for building a Rest API using flask.
 
 Other modules used are listed below; 
