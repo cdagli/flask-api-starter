@@ -9,5 +9,5 @@ marshmallow-sqlalchemy==0.12.0
 nose2==0.6.5
 six==1.10.0
 SQLAlchemy==1.1.2
-Werkzeug==0.11.11
+Werkzeug==0.15.3
 -e git://github.com/gangverk/flask-swagger.git#egg=flask-swagger
